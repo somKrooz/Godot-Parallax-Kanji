@@ -96,3 +96,13 @@ func _on_grade_8_pressed():
 	grade_label.text = "Grade - 8"
 	mainUrl = base + Kanji
 	timer.start()
+
+
+func _on_check_button_toggled(toggled_on):
+	if toggled_on:
+		add_theme_color_override("font_color",Color.WHITE)
+		grade_label.add_theme_color_override("font_color",Color.WHITE)
+	else:
+		add_theme_color_override("font_color",Color.BLACK)
+		grade_label.add_theme_color_override("font_color",Color.BLACK)
+	#add_theme_color_override("font_color",Color.WHITE)

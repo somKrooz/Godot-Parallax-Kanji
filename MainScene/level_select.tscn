@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmpgv7rd1kk45"]
+[gd_scene load_steps=8 format=3 uid="uid://bmpgv7rd1kk45"]
 
 [ext_resource type="Script" path="res://Utils/LevelSelect.gd" id="1_bk04e"]
+[ext_resource type="Texture2D" uid="uid://lreutkno1x5" path="res://Levels/Out.jpg" id="1_itfro"]
 [ext_resource type="Texture2D" uid="uid://j40pdc6xqt2l" path="res://Levels/nature_2/orig.png" id="2_v3d7x"]
+[ext_resource type="Texture2D" uid="uid://cvlturrtrsvic" path="res://Levels/1.png" id="3_2oao7"]
 [ext_resource type="Texture2D" uid="uid://edcjjbdw5bkx" path="res://Levels/nature_3/orig.png" id="3_un6pc"]
 [ext_resource type="Texture2D" uid="uid://c653yxcj2y30o" path="res://Levels/nature_4/orig.png" id="4_7hlvp"]
 [ext_resource type="Texture2D" uid="uid://c54nt8fh2f36l" path="res://Levels/nature_5/orig.png" id="5_8g4pr"]
 
 [node name="Level-Select" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(715, 204)
+scale = Vector2(2.80556, 3.34568)
+texture = ExtResource("1_itfro")
+flip_v = true
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = 8
@@ -30,19 +38,27 @@ script = ExtResource("1_bk04e")
 texture_filter = 1
 layout_mode = 2
 texture_normal = ExtResource("2_v3d7x")
+texture_pressed = ExtResource("3_2oao7")
+texture_hover = ExtResource("3_2oao7")
 
 [node name="level-2" type="TextureButton" parent="GridContainer"]
 texture_filter = 2
 layout_mode = 2
 texture_normal = ExtResource("5_8g4pr")
+texture_pressed = ExtResource("3_2oao7")
+texture_hover = ExtResource("3_2oao7")
 
 [node name="level-3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_7hlvp")
+texture_pressed = ExtResource("3_2oao7")
+texture_hover = ExtResource("3_2oao7")
 
 [node name="level-4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_un6pc")
+texture_pressed = ExtResource("3_2oao7")
+texture_hover = ExtResource("3_2oao7")
 
 [connection signal="pressed" from="GridContainer/level-1" to="GridContainer" method="_on_level_1_pressed"]
 [connection signal="pressed" from="GridContainer/level-2" to="GridContainer" method="_on_level_2_pressed"]

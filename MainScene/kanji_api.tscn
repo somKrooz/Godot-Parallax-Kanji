@@ -26,7 +26,7 @@ offset_right = 802.0
 offset_bottom = 531.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
 theme_override_fonts/font = SubResource("SystemFont_0bxx5")
 theme_override_font_sizes/font_size = 300
 text = "KROOZ"
@@ -51,11 +51,20 @@ theme_override_font_sizes/font_size = 20
 text = "Grade - 1"
 uppercase = true
 
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 707.0
+offset_top = 154.0
+offset_right = 751.0
+offset_bottom = 178.0
+scale = Vector2(1.245, 1.245)
+theme_override_constants/check_v_offset = 0
+theme_override_constants/outline_size = 0
+
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_left = 513.0
 offset_top = 154.0
-offset_right = 968.001
-offset_bottom = 211.0
+offset_right = 771.0
+offset_bottom = 201.0
 scale = Vector2(0.765, 0.765)
 theme_override_constants/h_separation = 5
 columns = 8
@@ -127,6 +136,7 @@ flat = true
 
 [connection signal="request_completed" from="HTTPRequest" to="Kanji" method="_on_http_request_request_completed"]
 [connection signal="timeout" from="Timer" to="Kanji" method="_on_timer_timeout"]
+[connection signal="toggled" from="CheckButton" to="Kanji" method="_on_check_button_toggled"]
 [connection signal="pressed" from="GridContainer/Grade-1" to="Kanji" method="_on_grade_1_pressed"]
 [connection signal="pressed" from="GridContainer/Grade-2" to="Kanji" method="_on_grade_2_pressed"]
 [connection signal="pressed" from="GridContainer/Grade-3" to="Kanji" method="_on_grade_3_pressed"]
