@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtyupiv0d28en"]
+[gd_scene load_steps=9 format=3 uid="uid://dtyupiv0d28en"]
 
 [ext_resource type="Script" path="res://AnimScript/AutoRun.gd" id="1_kaj1x"]
 [ext_resource type="PackedScene" uid="uid://byc5wpin53ivg" path="res://Scene/Util-Scene/change_btn.tscn" id="1_svmwi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dwlfsr5rlvex5" path="res://Levels/nature_3/3.png" id="4_3ticg"]
 [ext_resource type="Texture2D" uid="uid://bg0c6i6u25wel" path="res://Levels/nature_3/4.png" id="5_0np5i"]
 [ext_resource type="PackedScene" uid="uid://0iy0x4yfsohw" path="res://MainScene/kanji_api.tscn" id="5_c1uro"]
+[ext_resource type="AudioStream" uid="uid://r82f1uh7y7p4" path="res://Music/war-drum-loop-103870.mp3" id="8_vp0e2"]
 
 [node name="Grassland" type="Node2D"]
 
@@ -60,3 +61,6 @@ scale = Vector2(2.22396, 2.14198)
 texture = ExtResource("5_0np5i")
 centered = false
 offset = Vector2(0, 12)
+
+[node name="loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_vp0e2")

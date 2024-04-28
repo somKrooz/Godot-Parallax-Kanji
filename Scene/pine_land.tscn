@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cg2nv5jf7t6yp"]
+[gd_scene load_steps=9 format=3 uid="uid://cg2nv5jf7t6yp"]
 
 [ext_resource type="Script" path="res://AnimScript/AutoRun.gd" id="1_r2y5l"]
 [ext_resource type="PackedScene" uid="uid://byc5wpin53ivg" path="res://Scene/Util-Scene/change_btn.tscn" id="1_rv04u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://csvxartpki4v3" path="res://Levels/nature_4/2.png" id="4_fctlp"]
 [ext_resource type="Texture2D" uid="uid://b26lfllompiuy" path="res://Levels/nature_4/4.png" id="4_u0vbg"]
 [ext_resource type="PackedScene" uid="uid://0iy0x4yfsohw" path="res://MainScene/kanji_api.tscn" id="5_u7vip"]
+[ext_resource type="AudioStream" uid="uid://bq757r61pxa4d" path="res://Music/amen-break-no-copyright-remake-120bpm-25924.mp3" id="8_gg2u8"]
 
 [node name="Pine-Land" type="Node2D"]
 
@@ -58,3 +59,6 @@ scale = Vector2(2.225, 2.147)
 texture = ExtResource("4_u0vbg")
 centered = false
 offset = Vector2(0, 12)
+
+[node name="loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_gg2u8")

@@ -22,7 +22,7 @@ func _on_request_completed(result, response_code, headers, body):
 	
 
 func _on_timer_timeout():
-	http_request.request_completed.connect(_on_request_completed)
+	#http_request.request_completed.connect(_on_request_completed)
 	http_request.request(mainUrl)
 	
 

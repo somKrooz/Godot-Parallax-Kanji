@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmltrlv3g7yeq"]
+[gd_scene load_steps=9 format=3 uid="uid://cmltrlv3g7yeq"]
 
 [ext_resource type="Script" path="res://AnimScript/AutoRun.gd" id="1_ba4ug"]
 [ext_resource type="PackedScene" uid="uid://byc5wpin53ivg" path="res://Scene/Util-Scene/change_btn.tscn" id="1_uaryr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuhn60gni2hrd" path="res://Levels/nature_5/3.png" id="5_pvin6"]
 [ext_resource type="PackedScene" uid="uid://0iy0x4yfsohw" path="res://MainScene/kanji_api.tscn" id="5_x6wpr"]
 [ext_resource type="Texture2D" uid="uid://b4ee4gblrw8qt" path="res://Levels/nature_5/4.png" id="6_0oq5p"]
+[ext_resource type="AudioStream" uid="uid://b0kporgookhth" path="res://Music/peaceful-piano-loop-6903.mp3" id="8_ea7lg"]
 
 [node name="GrassLand" type="Node2D"]
 
@@ -59,3 +60,6 @@ scale = Vector2(2.225, 2.147)
 texture = ExtResource("6_0oq5p")
 centered = false
 offset = Vector2(0, 12)
+
+[node name="loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ea7lg")
