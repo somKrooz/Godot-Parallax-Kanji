@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://0iy0x4yfsohw"]
+
+[ext_resource type="Script" path="res://Utils/Kanji-API.gd" id="1_l77ve"]
+
+[sub_resource type="SystemFont" id="SystemFont_0bxx5"]
+
+[node name="kanji-API" type="Node2D"]
+
+[node name="Kanji" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 502.0
+offset_top = 122.0
+offset_right = 802.0
+offset_bottom = 531.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_0bxx5")
+theme_override_font_sizes/font_size = 300
+text = "KROOZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_l77ve")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Joyo" type="Button" parent="."]
+offset_left = 520.0
+offset_top = 91.0
+offset_right = 701.0
+offset_bottom = 177.0
+text = "ko"
+
+[connection signal="request_completed" from="HTTPRequest" to="Kanji" method="_on_http_request_request_completed"]
+[connection signal="timeout" from="Timer" to="Kanji" method="_on_timer_timeout"]
+[connection signal="pressed" from="Joyo" to="Kanji" method="_on_joyo_pressed"]

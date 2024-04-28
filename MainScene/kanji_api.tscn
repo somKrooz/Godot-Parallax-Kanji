@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://0iy0x4yfsohw"]
+
+[ext_resource type="Script" path="res://Utils/Kanji-API.gd" id="1_l77ve"]
+
+[sub_resource type="SystemFont" id="SystemFont_0bxx5"]
+font_weight = 200
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_uau1i"]
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_r2h47"]
+subpixel_positioning = 0
+
+[node name="kanji-API" type="Node2D"]
+
+[node name="Kanji" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 502.0
+offset_top = 122.0
+offset_right = 802.0
+offset_bottom = 531.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0bxx5")
+theme_override_font_sizes/font_size = 300
+text = "KROOZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_l77ve")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Grade-Label" type="Label" parent="."]
+offset_left = 601.0
+offset_top = 482.0
+offset_right = 696.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_uau1i")
+theme_override_font_sizes/font_size = 20
+text = "Grade - 1"
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 513.0
+offset_top = 154.0
+offset_right = 968.001
+offset_bottom = 211.0
+scale = Vector2(0.765, 0.765)
+theme_override_constants/h_separation = 5
+columns = 8
+
+[node name="Grade-1" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "1"
+flat = true
+
+[node name="Grade-2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "2"
+flat = true
+
+[node name="Grade-3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "3"
+flat = true
+
+[node name="Grade-4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "4"
+flat = true
+
+[node name="Grade-5" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "5"
+flat = true
+
+[node name="Grade-6" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "6"
+flat = true
+
+[node name="Grade-7" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "7"
+flat = true
+
+[node name="Grade-8" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_r2h47")
+theme_override_font_sizes/font_size = 22
+text = "8"
+flat = true
+
+[connection signal="request_completed" from="HTTPRequest" to="Kanji" method="_on_http_request_request_completed"]
+[connection signal="timeout" from="Timer" to="Kanji" method="_on_timer_timeout"]
+[connection signal="pressed" from="GridContainer/Grade-1" to="Kanji" method="_on_grade_1_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-2" to="Kanji" method="_on_grade_2_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-3" to="Kanji" method="_on_grade_3_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-4" to="Kanji" method="_on_grade_4_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-5" to="Kanji" method="_on_grade_5_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-6" to="Kanji" method="_on_grade_6_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-7" to="Kanji" method="_on_grade_7_pressed"]
+[connection signal="pressed" from="GridContainer/Grade-8" to="Kanji" method="_on_grade_8_pressed"]

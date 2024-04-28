@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdp82k38gv7ai"]
+
+[ext_resource type="PackedScene" uid="uid://byc5wpin53ivg" path="res://Scene/Util-Scene/change_btn.tscn" id="1_i5jwi"]
+[ext_resource type="Script" path="res://AnimScript/AutoRun.gd" id="1_ox4xy"]
+[ext_resource type="Texture2D" uid="uid://f21xismcbhfo" path="res://Levels/nature_2/1.png" id="3_0b33g"]
+[ext_resource type="Texture2D" uid="uid://c5pgwn1w3extt" path="res://Levels/nature_2/2.png" id="4_v4h7v"]
+[ext_resource type="PackedScene" uid="uid://0iy0x4yfsohw" path="res://MainScene/kanji_api.tscn" id="5_3xhp1"]
+[ext_resource type="Texture2D" uid="uid://6h8gq4slmxtl" path="res://Levels/nature_2/3.png" id="5_b4hgq"]
+[ext_resource type="Texture2D" uid="uid://cke4s70ho8t2j" path="res://Levels/nature_2/4.png" id="6_mn4nm"]
+
+[node name="HollowForest" type="Node2D"]
+
+[node name="ChangeBtn" parent="." instance=ExtResource("1_i5jwi")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_ox4xy")
+speed = 100.0
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+scale = Vector2(2.225, 2.147)
+texture = ExtResource("3_0b33g")
+centered = false
+
+[node name="Cloud" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Cloud"]
+texture_filter = 1
+scale = Vector2(2.225, 2.147)
+texture = ExtResource("4_v4h7v")
+centered = false
+offset = Vector2(0, 12)
+
+[node name="far-Mountain" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/far-Mountain"]
+texture_filter = 1
+scale = Vector2(2.225, 2.147)
+texture = ExtResource("5_b4hgq")
+centered = false
+offset = Vector2(0, 12)
+
+[node name="kanji-API" parent="ParallaxBackground" instance=ExtResource("5_3xhp1")]
+
+[node name="FG-mtn" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FG-mtn"]
+texture_filter = 1
+scale = Vector2(2.225, 2.147)
+texture = ExtResource("6_mn4nm")
+centered = false
+offset = Vector2(0, 12)
