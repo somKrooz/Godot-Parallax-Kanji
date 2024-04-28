@@ -7,16 +7,16 @@ func _ready():
 
 
 func _on_level_1_pressed():
-	get_tree().change_scene_to_file("res://Scene/hollow_forest.tscn")
+	Screenfade.kroozer("res://Scene/hollow_forest.tscn")
 
 
 func _on_level_2_pressed():
-	get_tree().change_scene_to_file("res://Scene/grass_land.tscn")
+	Screenfade.kroozer("res://Scene/grass_land.tscn")
 
 
 func _on_level_3_pressed():
-	get_tree().change_scene_to_file("res://Scene/pine_land.tscn")
+	Screenfade.kroozer("res://Scene/pine_land.tscn")
 
 
 func _on_level_4_pressed():
-	get_tree().change_scene_to_file("res://Scene/grassland.tscn")
+	Screenfade.kroozer("res://Scene/grassland.tscn")
